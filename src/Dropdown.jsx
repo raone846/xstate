@@ -43,8 +43,8 @@ function Dropdown() {
         </select>
         {selectedCity && (
             <h3>
-                You Selected <span style={{ fontSize: '24px', fontWeight: 'bold' }}>{selectedCity}</span>,{' '}
-                <span style={{ color: 'grey' }}>{selectedState}</span>,{' '}
+                You Selected <span style={{ fontSize: '24px', fontWeight: 'bold' }}>{selectedCity},</span>{' '}
+                <span style={{ color: 'grey' }}>{selectedState},</span>{' '}
                 <span style={{ color: 'grey' }}>{selectedCountry}</span>
             </h3>
         )}
