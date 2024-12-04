@@ -24,7 +24,7 @@ function Dropdown() {
     useEffect(() => {
         if(!selectedState) return;
         fetch(`https://crio-location-selector.onrender.com/country=${selectedCountry}/state=${selectedState}/cities`).then((res) => res.json()).then((data) => setCity(data)).catch((error) => console.error("Error fetching data: "+error));
-    },[selectedState]);
+    },[selectedCountry,selectedState]);
 
   return (
     <div>
@@ -41,13 +41,16 @@ function Dropdown() {
             <option>Select City</option>
             {city.map(city=> <option value={city} key={city}>{city}</option>)}   
         </select>
-        {selectedCity && (
-            <h3>
-                You selected <span style={{ fontSize: '24px', fontWeight: 'bold' }}>{selectedCity},</span>{' '}
-                <span style={{ color: 'grey' }}>{selectedState},</span>{' '}
-                <span style={{ color: 'grey' }}>{selectedCountry}</span>
-            </h3>
-        )}        
+        <div>
+            {selectedCity && (
+                <h3>
+                    You selected <span style={{ fontSize: '24px', fontWeight: 'bold' }}>{selectedCity},</span>{' '}
+                    <span style={{ color: 'grey' }}>{selectedState},</span>{' '}
+                    <span style={{ color: 'grey' }}>{selectedCountry}</span>
+                </h3>
+            )} 
+        </div>
+               
     </div>
   )
 }
