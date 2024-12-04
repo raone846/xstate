@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 function Dropdown() {
+
     //Api fetch for the countries
     const API_URL = "https://crio-location-selector.onrender.com/countries";
     const [countries, setCountries] = useState([]);
@@ -44,13 +45,10 @@ function Dropdown() {
         <div>
             {selectedCity && (
                 <h3>
-                    You selected <span style={{ fontSize: '24px', fontWeight: 'bold' }}>{selectedCity},</span>{' '}
-                    <span style={{ color: 'grey' }}>{selectedState},</span>{' '}
-                    <span style={{ color: 'grey' }}>{selectedCountry}</span>
+                    You selected {selectedCity}, {selectedState}, {selectedCountry}
                 </h3>
             )} 
-        </div>
-               
+        </div>     
     </div>
   )
 }
