@@ -47,9 +47,7 @@ function Dropdown() {
                 <span style={{ color: 'grey' }}>{selectedState},</span>{' '}
                 <span style={{ color: 'grey' }}>{selectedCountry}</span>
             </h3>
-        )}
-
-        
+        )}        
     </div>
   )
 }
